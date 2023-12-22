@@ -205,7 +205,7 @@ foreach (array_keys($datesToUpdate) as $date) {
         $emailContent = generateEmailContent($selectedCategory, $date, $removedUser, $usernames, $scheduleResult);
 
 
-        $to = 'wiktor.szczurek1@gmail.com'; 
+        $to = 'yourmail@example.com'; 
         $subject = 'Zmiana w grafiku pracy';
         $headers = "MIME-Version: 1.0" . "\r\n";
         $headers .= "Content-Type: text/html; charset=UTF-8" . "\r\n";
