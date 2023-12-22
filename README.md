@@ -26,3 +26,11 @@ Email Communication: The main administrator receives notifications about schedul
 Logging in with an RFID reader: To start or end a shift, employees use their RFID identifiers. When an employee scans their card or fob at the reader, the system automatically registers the time of entry or exit, allowing for precise tracking of the number of hours worked. This solution is quick and convenient, minimizing the risk of errors or forgetting to manually record work time.
 
 Logging in with a PIN: For access to more detailed system functions, such as reviewing their own activities, schedules, tips, leaves, or checklists, employees can log in using a personal PIN. Upon logging in, they have access to the user panel, where they can analyze and compare their statistics, view work schedules, communicate with others, and check their tasks.
+
+
+Admin dashboard:
+![ShooterScreenshot-408-22-12-23](https://github.com/wiktorszczurek/Employee-system/assets/124889327/77128082-be4b-400e-b3ea-200f690f4ef5)
+
+
+User dashboard:
+![ShooterScreenshot-409-22-12-23](https://github.com/wiktorszczurek/Employee-system/assets/124889327/0dbc660c-1795-415f-b75d-8a37490d6564)
