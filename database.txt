@@ -1,0 +1,160 @@
+categories
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+name varchar(255) Nie
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 5 A Nie
+daily_tips
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+date date Nie
+total_amount decimal(10,2) Nie
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+date BTREE Tak Nie date 0 A Nie
+deleted_schedules
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+user_id int(11) Nie
+work_date date Nie
+deleted_by int(11) Nie
+replacement_user_id int(11) Tak NULL
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+exact_start_times
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+working_hours_id int(11) Tak NULL working_hours -> id
+exact_start_time datetime Tak NULL
+Indeksy
+22.12.2023, 17:28 h27.seohost.pl / DA PMA Signon / srv56072_system | phpMyAdmin 5.2.1
+https://h27.seohost.pl/phpMyAdmin/index.php?route=/database/data-dictionary&db=srv56072_system&goto=index.php%3Froute%3D%2Fdataba… 2/5
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+working_hours_id BTREE Nie Nie working_hours_id 0 A Tak
+messages
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+sender_id int(11) Nie users -> id
+category varchar(255) Nie
+message text Nie
+sent_date datetime Tak current_timestamp()
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+sender_id BTREE Nie Nie sender_id 0 A Nie
+notes
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+title varchar(255) Nie
+content text Nie
+created_at timestamp Nie current_timestamp()
+category varchar(50) Nie info
+signature varchar(255) Tak NULL
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+removed_users
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+user_id int(11) Nie users -> id
+work_date date Nie
+removed_at timestamp Nie current_timestamp()
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+user_id BTREE Nie Nie user_id 0 A Nie
+22.12.2023, 17:28 h27.seohost.pl / DA PMA Signon / srv56072_system | phpMyAdmin 5.2.1
+https://h27.seohost.pl/phpMyAdmin/index.php?route=/database/data-dictionary&db=srv56072_system&goto=index.php%3Froute%3D%2Fdataba… 3/5
+schedules
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+user_id int(11) Tak NULL users -> id
+work_date date Tak NULL
+start_time time Tak NULL
+end_time time Tak NULL
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+user_id BTREE Tak Nie
+user_id 0 A Tak
+work_date 0 A Tak
+surveys
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+category varchar(255) Nie
+name varchar(255) Nie
+created_at timestamp Nie current_timestamp()
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 14 A Nie
+survey_answers
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+user_id int(11) Nie users -> id
+question_id int(11) Nie survey_questions -> id
+answer enum('Tak', 'Nie') Nie
+comment varchar(255) Tak NULL
+created_at timestamp Nie current_timestamp()
+session_id varchar(255) Tak NULL
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+user_id BTREE Nie Nie user_id 0 A Nie
+question_id BTREE Nie Nie question_id 0 A Nie
+22.12.2023, 17:28 h27.seohost.pl / DA PMA Signon / srv56072_system | phpMyAdmin 5.2.1
+https://h27.seohost.pl/phpMyAdmin/index.php?route=/database/data-dictionary&db=srv56072_system&goto=index.php%3Froute%3D%2Fdataba… 4/5
+survey_questions
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+survey_id int(11) Nie surveys -> id
+question text Nie
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 169 A Nie
+survey_id BTREE Nie Nie survey_id 28 A Nie
+users
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+name varchar(255) Nie
+category varchar(255) Nie
+password varchar(255) Tak NULL
+is_admin tinyint(1) Tak 0
+rfid varchar(255) Tak NULL
+created_at datetime Tak current_timestamp()
+last_message_check datetime Tak NULL
+last_login datetime Tak NULL
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 23 A Nie
+vacation
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+user_id int(11) Nie users -> id
+total_hours int(11) Tak 0
+used_hours int(11) Tak 0
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+user_id BTREE Nie Nie user_id 0 A Nie
+working_hours
+22.12.2023, 17:28 h27.seohost.pl / DA PMA Signon / srv56072_system | phpMyAdmin 5.2.1
+https://h27.seohost.pl/phpMyAdmin/index.php?route=/database/data-dictionary&db=srv56072_system&goto=index.php%3Froute%3D%2Fdataba… 5/5
+Column Typ Null Default Odsyłacze do Comments Media type
+id (Podstawowy) int(11) Nie
+user_id int(11) Nie users -> id
+date date Nie
+hours decimal(5,2) Tak NULL
+start_time datetime Tak NULL
+end_time datetime Tak NULL
+is_active tinyint(1) Nie 0
+tip decimal(10,2) Tak 0.00
+edited tinyint(1) Nie 0
+exact_start_time datetime Tak NULL
+Indeksy
+Keyname Typ Jednoznaczny Spakowany Column Cardinality Collation Null Comment
+PRIMARY BTREE Tak Nie id 0 A Nie
+fk_working_hours_user_id BTREE Nie Nie user_id 0 A Nie
